@@ -26,7 +26,9 @@ int inicializarLista(lista_t *lista) {
     return 1;
 
 }
+
 int alocarNodoListaPrimeiro(lista_t *lista, int valor) {
+
     if (listaVazia(lista)) {
         lista->inicio = criaNodo(valor);
         lista->fim = lista->inicio;
@@ -44,6 +46,7 @@ int alocarNodoListaPrimeiro(lista_t *lista, int valor) {
 }
 
 int alocarNodoListaUltimo(lista_t *lista, int valor) {
+
     if (listaVazia(lista)){
         lista->inicio = criaNodo(valor);
         lista->fim = lista->inicio;
@@ -61,7 +64,9 @@ int alocarNodoListaUltimo(lista_t *lista, int valor) {
     return 1;
 
 }
+
 int removerPrimeiraAparicaoValor(lista_t *lista, int valor) {
+
     nodo_t *aux = lista->inicio;
     while (aux != NULL && aux->valor != valor) {
         aux = aux->prox;
@@ -115,6 +120,7 @@ int limparLista(lista_t *lista) {
 }
 
 void imprimirLista(lista_t *lista) {
+
     printf("Lista:\n");
 
     printf("NULL->");
@@ -125,21 +131,26 @@ void imprimirLista(lista_t *lista) {
 
 }
 void imprimirListaContrario(lista_t *lista) {
+
     printf("Lista ao contrario:\n");
     printf("NULL->");
     for (nodo_t *aux = lista->fim; aux != NULL; aux = aux->ant) {
         printf("%d->", aux->valor);
     }
     printf("NULL\n");
+
 }
 
 void troca (nodo_t *nodo1, nodo_t *nodo2) {
+
     int valor = nodo1->valor;
     nodo1->valor = nodo2->valor;
     nodo2->valor = valor;
+
 }
 
 void ordenarLista(lista_t *lista) {
+
     int flagTroca = 1;
     nodo_t *ultimaTroca = lista -> fim;
     nodo_t *posicao = lista -> inicio;
@@ -154,4 +165,5 @@ void ordenarLista(lista_t *lista) {
         }
         ultimaTroca = posicao;
     }
+
 }
